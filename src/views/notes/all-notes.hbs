@@ -3,17 +3,17 @@
     {{#each notes}}
     <div class="col-sm-12 mt-1">
         <div class="card">
-            <div class="card-title mt-2">
-                <h4 class="display-7 text-center">
+            <div class="card-title mt-2 d-flex justify-content-around align-items-center">
+                <h4 class="ext-center">
                     {{title}}
                 </h4>
+                <a href="#"><i class="fas fa-pen-square display-6 edit"></i></a>
             </div>
             <div class="card-body">
                 <p>{{description}}</p>
-
-                <div>
-                    <button class="btn btn-danger btn-block">Delete</button>
-                </div>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-danger btn-block">Delete</button>
             </div>
         </div>
     </div>
@@ -21,15 +21,14 @@
     <div class="col-sm-12 mt-1">
         <div class="card">
             <div class="card-title mt-2">
-            <div class="card-body">
-                <p class="lead text-center">There aren't notes yet!</p>
-
-                <div>
+                <div class="card-body">
+                    <p class="lead text-center">There aren't notes yet!</p>
+                </div>
+                <div class="card-footer">
                     <a href="/notes/add" class="btn btn-success btn-block">Create One!</a>
                 </div>
             </div>
         </div>
-    </div>
 
-    {{/each}}
-</div>
+        {{/each}}
+    </div>
