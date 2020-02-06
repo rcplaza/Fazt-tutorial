@@ -7,27 +7,32 @@
                 <h4 class="ext-center">
                     {{title}}
                 </h4>
-                <a href="#"><i class="fas fa-pen-square display-6 edit"></i></a>
+                <a href="/notes/edit/{{_id}}"><i class="fas fa-pen-square display-6 edit"></i></a>
             </div>
             <div class="card-body">
                 <p>{{description}}</p>
             </div>
             <div class="card-footer">
-                <button class="btn btn-danger btn-block">Delete</button>
+                <form action="/notes/delete/{{_id}}?_method=DELETE" method="POST">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <button type="submit" class="btn btn-danger btn-block">Delete</button>
+                </form>
             </div>
         </div>
     </div>
     {{else}}
     <div class="col-sm-12 mt-1">
-        <div class="card">
-            <div class="card-title mt-2">
-                <div class="card-body">
-                    <p class="lead text-center">There aren't notes yet!</p>
-                </div>
-                <div class="card-footer">
-                    <a href="/notes/add" class="btn btn-success btn-block">Create One!</a>
-                </div>
+        <div class="card mt-5">
+            <div class="card-header text-center">
+                <h4 class="display-4">Hello {{user.name}}</h4>
             </div>
+            <div class="card-body">
+                <p class="lead text-center">There aren't notes yet!</p>
+            </div>
+            <div class="card-footer">
+                <a href="/notes/add" class="btn btn-success btn-block">Create One!</a>
+            </div>
+
         </div>
 
         {{/each}}

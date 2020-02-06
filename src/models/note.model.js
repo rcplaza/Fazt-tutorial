@@ -15,6 +15,10 @@ const noteSchema = new Schema({
     },
     updatedAt: {
         type: Date,
+    },
+    createdBy: {
+        type: String,
+        required: [true, 'this is a required field']
     }
 })
 
